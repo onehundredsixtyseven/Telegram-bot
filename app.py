@@ -5,7 +5,7 @@ from extensions import APIException, CryptoConverter
 bot = telebot.TeleBot(TOKEN)
 
 @bot.message_handler(commands=['menu'])
-def main_menu(message):
+def mmain_menu(message):
     bot.send_message(message.chat.id, main_menu)
 
 @bot.message_handler(commands=['start'])
@@ -13,11 +13,11 @@ def start(message):
     bot.send_message(message.chat.id, help + '\n /menu')
 
 @bot.message_handler(commands=['help'])
-def help(message):
+def hhelp(message):
     bot.send_message(message.chat.id, help + '\n /menu')
 
 @bot.message_handler(commands=['values'])
-def values(message):
+def vvalues(message):
     bot.send_message(message.chat.id, 'Доступны следующие валюты:')
     for i in values:
         bot.send_message(message.chat.id, i + ' ' + values[i] )
